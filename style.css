@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+/*
+isabelline: #edede9ff;
+timberwolf: #d6ccc2ff;
+linen: #f5ebe0ff;
+champagne-pink: #e3d5caff;
+pale-dogwood: #d5bdafff */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Titillium Web", sans-serif;
+}
+
+body{
+    background-color: #d5bdafff;
+}
+button a{
+    text-decoration: none;
+    color: #b7a4a4;
+}
+
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+header a{
+    text-decoration: none;
+    color: #edede9ff;
+    margin-right: 40px;
+    font-size: 1.2rem;
+}
+
+/*carousel*/
+
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
+    position: relative;
+}
+
+.carousel .lists .item{
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .lists .item img{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+.carousel .lists .item .content{
+    position: absolute;
+    top: 50%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-55%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: white;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.carousel .lists .item .content .artist{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .lists .item .content .title{
+    font-weight: bold;
+    font-size: 3em;
+    list-style: 1.3em;
+    color: #f1683a;
+}
+.carousel .lists .item .content .des{
+    font-size: 1rem;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    letter-spacing: 2px;
+    height: 2rem;
+    width: 6.5rem;
+    border-radius: 10px;
+    color: #b7b7b7;
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 1.1rem;
+    padding: 2px 2px 2px 2px;
+    transition: 0.5s;
+}
+button:hover{
+    border: 1px solid beige;
+    background-color: rgba(245, 245, 245, 0.156);;
+    cursor: pointer;
+    color: azure;
+}
+
+.arrows{
+    position: absolute;
+    top: 85%;
+    right: 78vw;
+    width: 15.625vw;
+    max-width: 38%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.arrows button{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: large;
+    transition: 0.5s;
+    z-index: 100;
+}
+.arrows button:hover{
+    background-color: rgba(245, 245, 245, 0.156);
+    color: azure;
+}
+
+.carousel .lists .item:nth-child(1){
+    z-index: 1;
+}
+
+.carousel .lists .item:nth-child(1) .artist,
+.carousel .lists .item:nth-child(1) .title,
+.carousel .lists .item:nth-child(1) .des,
+.carousel .lists .item:nth-child(1) .buttons{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 0.6s linear 1 forwards;
+}
+
+@keyframes showContent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.carousel .lists .item:nth-child(1) .title{
+    animation-delay: 1.2s;
+}
+.carousel .lists .item:nth-child(1) .des{
+    animation-delay: 1.4s;
+}
+.carousel .lists .item:nth-child(1) .buttons{
+    animation-delay: 1.5s;
+}
+
+/*thumbnail*/
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 60%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.thumbnail .item .content{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .title{
+    font-weight: bold;
+}
+
+.carousel.next .lists .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 60%;
+    bottom: 50px;
+    border-radius: 15px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage {
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+.carousel.next .thumbnail .item:nth-child(4){
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+@keyframes showThumbnail {
+    to{
+        width: 150px;
+    }
+}
+.carousel.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+@keyframes transformThumbnail {
+    to{
+        transform: translateX(0);
+    }
+}
+
+/*previous effects*/
+.carousel.prev .lists .item:nth-child(2){
+    z-index: 2;
+}
+.carousel.prev .lists .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+@keyframes outImage {
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 60%;
+        bottom: 50px;
+    }
+}
+.carousel.prev .thumbnail .item:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+.carousel.prev .lists .item:nth-child(2) .artist,
+.carousel.prev .lists .item:nth-child(2) .title,
+.carousel.prev .lists .item:nth-child(2) .des,
+.carousel.prev .lists .item:nth-child(2) .buttons{
+    animation: contentOut 1.5s linear 1 forwards;
+}
+@keyframes contentOut {
+    to{
+        transform: translateY(-15opx);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+
+/*time*/
+.time{
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.carousel.next .time,
+.carousel.prev .time{
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+@keyframes timeRunning {
+    to{
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    /* .carousel .lists .item .content{
+        padding-right: 0;
+    } */
+    .carousel .lists .item .content .title{
+        font-size: 30px;
+    }
+    .carousel .lists .item .content .des{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 610px) {
+    /* .carousel .lists .item .content{
+        padding-right: 0;
+    } */
+    .carousel .lists .item .content .title{
+        font-size: 29px;
+    }
+    .carousel .lists .item .content .des{
+        font-size: 15px;
+    }
+}
