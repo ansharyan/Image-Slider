@@ -10,7 +10,7 @@ nextDom.onclick = function(){
 prevDome.onclick = function(){
     showSlider('prev');
 }
-let timeRunning = 2000;
+let timeRunning = 1500;
 let runTimeout;
 function showSlider(type){
     let itemSlider= document.querySelectorAll(".carousel .lists .item");

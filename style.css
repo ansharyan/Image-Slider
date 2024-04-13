@@ -18,7 +18,8 @@ body{
 }
 button a{
     text-decoration: none;
-    color: #b7a4a4;
+    color: #ffcfd8;
+    text-shadow: 0 5px 10px #0004;
 }
 
 header{
@@ -115,6 +116,7 @@ button:hover{
     display: flex;
     gap: 10px;
     align-items: center;
+    text-align: center;
 }
 
 .arrows button{
@@ -125,6 +127,9 @@ button:hover{
     font-size: large;
     transition: 0.5s;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .arrows button:hover{
     background-color: rgba(245, 245, 245, 0.156);
@@ -142,7 +147,7 @@ button:hover{
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent 0.5s 0.6s linear 1 forwards;
+    animation: showContent 0.5s 0.5s linear 1 forwards;
 }
 
 @keyframes showContent{
@@ -154,13 +159,13 @@ button:hover{
 }
 
 .carousel .lists .item:nth-child(1) .title{
-    animation-delay: 1.2s;
+    animation-delay: 0.7s;
 }
 .carousel .lists .item:nth-child(1) .des{
-    animation-delay: 1.4s;
+    animation-delay: 0.9s;
 }
 .carousel .lists .item:nth-child(1) .buttons{
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 /*thumbnail*/
@@ -318,5 +323,73 @@ button:hover{
     }
     .carousel .lists .item .content .des{
         font-size: 15px;
+    }
+}
+@media  screen and (max-width: 494px) {
+    .carousel .lists .item .content .artist{
+        font-size: 13.5px;
+    }
+    .carousel .lists .item .content .title{
+        font-size: 26px;
+    }
+    .carousel .lists .item .content .des{
+        font-size: 11px;
+    }
+    header a{
+        font-size: 12px;
+    }
+    button {
+        font-size: 1rem;
+    }
+    .arrows{
+        position: absolute;
+        right: 75vw;
+        width: 16vw;
+        max-width: 40%;
+    }
+    .arrows button{
+        height: 30px;
+        width: 30px;
+        font-size: medium;
+        
+    }
+    .thumbnail .item{
+        width: 140px;
+        height: 200px;
+    }
+    
+}
+@media  screen and (max-width: 289px) {
+    .carousel .lists .item .content .artist{
+        font-size: 13px;
+    }
+    .carousel .lists .item .content .title{
+        font-size: 25px;
+    }
+    .carousel .lists .item .content .des{
+        font-size: 10.5px;
+    }
+    header a{
+        font-size: 12px;
+    }
+    button a{
+        font-size: 0.8rem;
+        border: 1px solid rgba(106, 106, 106, 0.844);
+        border-radius: 5px;
+        padding: 2px 2px 2px 2px;
+    }
+    .arrows{
+        right: 75vw;
+        width: 16vw;
+        max-width: 40%;
+    }
+    .arrows button{
+        height: 25px;
+        width: 25px;
+        font-size: smaller;   
+    }
+    .thumbnail .item{
+        width: 130px;
+        height: 180px;
     }
 }
