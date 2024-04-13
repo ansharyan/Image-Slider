@@ -338,8 +338,11 @@ button:hover{
     header a{
         font-size: 12px;
     }
-    button {
+    button a{
         font-size: 1rem;
+        border: 1px solid rgba(106, 106, 106, 0.844);
+        border-radius: 5px;
+        padding: 2px 2px 2px 2px;
     }
     .arrows{
         position: absolute;
